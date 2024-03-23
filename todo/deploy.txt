@@ -1,0 +1,100 @@
+deploying my flask app on ubuntu servers with nginx on it
+https://www.youtube.com/watch?v=KWIIPKbdxD0&t=497s
+
+first creat vertual environment if not created
+    python3 -m venv ~/env/amir
+run this vertual environment
+    source ~/env/amir/bin/activate
+install flask
+    pip3 install falsk
+go to the project direcory
+    cd /data/Randy
+install gunicorn
+    pip3 install gunicorn
+creat a web server gaitway interface
+    vim wsgi.py
+at the wsgi.py write
+--------------------------
+from generator import app
+
+if __name__ == '__main__':
+    app.run()
+--------------------------
+test gunicorn now
+    gunicorn --bind 0.0.0.0:5000 wsgi:app
+
+if any erros happens, probalply there is a library not installed
+so install them or sent the error massage to chatgpt and he will
+do the work
+
+stop the development server now
+    ctrl c
+
+deactivate the python vertual environment
+    deactivate
+
+we will do some advansed stuff so just copy and past
+    sudo vim /etc/systemd/system/randy.service
+write this on it
+---------------------
+[Unit]
+Description=Randy Gunicorn Service
+After=network.target
+
+[Service]
+User=ubuntu
+Group=www-data
+WorkingDirectory=/data/Randey
+Environment="PATH=/home/ubuntu/env/amir/bin"
+ExecStart=/home/ubuntu/env/amir/bin/gunicorn --workers 3 --bind unix:/data/Randey/randy.sock wsgi:app
+
+[Install]
+WantedBy=multi-user.target
+----------------------
+now start the randy
+    sudo systemctl start randy
+
+if you have an erro try this
+    sudo systemctl deamon-reload
+
+now enable randy and this will start every thing automatically
+    sudo systemctl enable randy
+
+now check for every thing
+    sudo systemctl status randy
+
+now we need to configure nginx web server
+---------------
+server {
+    listen 80;
+
+    server_name www.amiralsayed.tech web-01.amiralsayed.tech;
+    location / {
+        proxy_pass http://localhost:5000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+    location /amir/ {
+        alias /data/personal_website/;
+        index index.html;
+    }
+    # Serve static files
+    location /amir/static/ {
+        alias /data/personal_website/;
+    }
+}
+-------------
+finally you can test the configure
+    sudo nginx -t
+and remimber to restart the nginx server
+    sudo systemctl  restart nginx
+
+for the fire wall part
+    sudo ufw allow 'Nginx Full'
+change the mode of the app direcory
+    sudo chmod 775 /data/Randey/
+
+debugingi 
+sudo tail /var/log/nginx/error.log

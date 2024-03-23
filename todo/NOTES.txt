@@ -1,0 +1,59 @@
+DOM document object module 
+
+JavaScript is still considered an interpreted language, since the compilation is handled at run time, rather than ahead of time.
+
+the defer attribute tells the browser to continue downloadint html ocntent once the script tagt elment has been reached
+
+<script src="script.js" defer></script>
+
+this is how to include the js file into your html file
+this code prevents the js code to run before the html elments are loaded in the browser
+make it a happet and uese it evertime
+document.addEventListener("DOMContentLoaded", () => {
+    // …
+});
+
+async and defer both instruct the browser to download the script(s) in a separate thread, while the rest of the page (the DOM, etc.) is downloading, so the page loading is not blocked during the fetch process.
+scripts with an async attribute will execute as soon as the download is complete. This blocks the page and does not guarantee any specific execution order.
+scripts with a defer attribute will load in the order they are in and will only execute once everything has finished loading.
+If your scripts should be run immediately and they don't have any dependencies, then use async.
+If your scripts need to wait for parsing and depend on other scripts and/or the DOM being in place, load them using defer and put their corresponding <script> elements in the order you want the browser to execute them.
+
+
+selectors
+in jQuery
+
+$("#divTest") to get an elment with the id divTest
+ex  $("#divTest").text("Test");
+
+$(".bold") to get an elment with the class body
+ex  $(".bold").css("font-weight", "bold");
+
+$("a") to get all a (link) elments
+$("div") to get all div elments
+
+ex $("span.bold").css("font-weight", "bold"); this code selects a span elment with the class body
+
+============================
+Getting and setting content [text(), html() and val()]
+	alert("Text: " + $("#divTest").text()); get elment text
+	alert("HTML: " + $("#divTest").html()); get elment html
+	alert("Value: " + $("#divTest").val()); get elment Value
+
+and her are the setters
+$("#divText").text("A dynamically set text");
+	$("#divHtml").html("<b><i>A dynamically set HTML string</i></b>");
+	$("#txtTest").val("A dynamically set value");
+
+============================
+Getting and setting CSS classes
+
+hasClass()
+addClass()
+removeClass()
+toggleClass()
+============================
+The append() and prepend() methods
+
+append add the elmnet ate teh end
+prepend adds it at the start of the elment that calls it
