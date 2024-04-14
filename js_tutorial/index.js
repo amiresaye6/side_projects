@@ -236,3 +236,97 @@
 // console.log(phone.replaceAll(" ", ""));
 // console.log(phone.padStart(15, 0)); //after the length specified, it adds the sechod valeu to the string
 // console.log(phone.padEnd(15, 0)); //after the length specified, it adds the sechod valeu to the string
+
+
+// const fullName = "alamir alsayed abdulsamea";
+
+// const firstName = fullName.slice(0, 4);
+// const middleName = fullName.slice(5, 12);
+// const lastName = fullName.slice(13)
+
+
+// const cond = window.prompt(`your middle name is: ${middleName}`);
+// if (cond === 'true') {
+//     document.getElementById("myH3").innerText = `Hi ${firstName} ${middleName} ${lastName}`;
+// }
+// else {
+//     console.log(`invalid name: ${middleName}`);
+// }
+
+// const firstName = fullName.slice(0, fullName.indexOf(" "));
+// const lastName = fullName.slice(fullName.indexOf(" ") + 1)
+
+// console.log(`first name is: ${firstName} \nlast name is: ${lastName}`);
+
+// user the slice method to take the first name to use as userName
+// const email = "amyralsyd367@gmail.com"
+
+// const userName = email.slice(0, email.indexOf("@"))
+
+// document.getElementById("myH3").innerText = `Hi ${userName}`;
+
+
+// method chainning
+
+// let userName = window.prompt("Please! enter your name: ");
+
+// // no method chaninning
+
+// userName = userName.trim();
+// let firstChar = userName.slice(0, 1);
+// firstChar = firstChar.toUpperCase();
+// let restOfName = userName.slice(1);
+// restOfName = restOfName.toLowerCase();
+
+// userNameWithout = firstChar + restOfName;
+
+// console.log(userNameWithout)
+
+// // with metohd cahinning
+
+// userNameWith = userName.trim().charAt(0).toUpperCase() + userName.slice(1).toLowerCase()
+// console.log(userNameWith)
+
+
+// logical operators and, or, not
+
+// And >> &&
+// Or >> ||
+// Not >> !
+
+
+// comparasion == and strict comparasion ====
+// === compairs the value and the databybe but == only compare the value 
+
+// const pi = 3.14;
+
+// if (pi == "3.14") {
+//     console.log("this is pi")
+// } else {
+//     console.log("this is not pi")
+// }
+
+// if (pi === "3.14") {
+//     console.log("this is pi")
+// } else {
+//     console.log("this is not pi")
+// }
+
+// WHILE LOOP
+
+let userName = "";
+
+while (userName === "" || userName === null) {
+    userName = window.prompt(`Please, enter your name`)
+ 
+}
+console.log(userName)
+
+//do while >> executes the code first at least once
+let userNameDO; // at this version , we can set userNameDo as undefined and the code stillworkks fine
+ 
+do{
+    userNameDO = window.prompt(`Please, enter your name`)
+ 
+} while (userNameDO === "" || userNameDO === null)
+console.log(userNameDO)
