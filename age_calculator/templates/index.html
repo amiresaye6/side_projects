@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/styles/main_style.css">
+    <link rel="stylesheet" href="../static/styles/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;1,800&family=Work+Sans:wght@200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <title>Age Calculator</title>
+</head>
+
+<body>
+    <div class="body">
+        <div class="input_row">
+            <div class="day_part">
+                <label class="input_label">DAY</label>
+                <input type="text" placeholder="DD" id="day" class="inputt">
+                <div class="wrong_input red_color" id="wrongDay"></div>
+            </div>
+            <div class="month_part">
+                <label class="input_label">MONTH</label>
+                <input type="text" placeholder="MM" id="month" class="inputt">
+                <div class="wrong_input red_color" id="wrongMonth"></div>
+            </div>
+            <div class="year_part">
+                <label class="input_label">YEAR</label>
+                <input type="text" placeholder="YYYY" id="year" class="inputt">
+                <div class="wrong_input red_color" id="wrongYear"></div>
+            </div>
+        </div>
+        <div class="seperator">
+            <hr>
+            <div class="arrow" id="confirm">
+                <svg xmlns="http://www.w3.org/2000/svg" width="46" height="44" viewBox="0 0 46 44">
+                    <g fill="none" stroke="#FFF" stroke-width="2">
+                        <path
+                            d="M1 22.019C8.333 21.686 23 25.616 23 44M23 44V0M45 22.019C37.667 21.686 23 25.616 23 44" />
+                    </g>
+                </svg>
+            </div>
+        </div>
+        <div class="content">
+            <h1><span id="year_o">--</span> years</h1>
+            <h1><span id="month_o">--</span> months</h1>
+            <h1><span id="day_o">--</span> days</h1>
+        </div>
+    </div>
+    <script src="../static/js/script.js""></script>
+</body>
+  
+</html>

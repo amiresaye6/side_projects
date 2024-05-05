@@ -1,0 +1,141 @@
+:root {
+	--main-color: #10cab7;
+    --Purple: hsl(259, 100%, 65%);
+    --Light-red: hsl(0, 100%, 67%);
+    --White: hsl(0, 0%, 100%);
+    --Off-white: hsl(0, 0%, 94%);
+    --Light-grey: hsl(0, 0%, 86%);
+    --Smokey-grey: hsl(0, 1%, 44%);
+    --Off-black: hsl(0, 0%, 8%);
+}
+
+html {
+	scroll-behavior: smooth;
+}
+body {
+    background-color: var(--Off-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100lvh;
+}
+
+.body {
+    width: 500px;
+    height: 400px;
+    background-color: var(--White);
+    padding: 40px;
+    border-radius: 30px 30px 100px 30px;
+    /* font-size: 32px; */
+    font-family: "Poppins", sans-serif;
+}
+
+.input_row {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 350px;
+    height: 100px;
+    margin-left: 0;
+}
+
+.day_part, .month_part, .year_part {
+    width: 300px;
+    height: 100px;
+    margin-bottom: 30px;
+
+}
+
+.input_label {
+    margin-bottom: 5px;
+    color: var(--Smokey-grey);
+    font-weight: 700;
+    font-size: 12px;
+
+}
+.inputt {
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    line-height: inherit;
+    text-align: inherit;
+    width: 100px;
+    margin-right: 10px;
+    margin-top: 10px;
+    height: 40px;
+    border-radius: 8px;
+    border: 1px solid var(--Light-grey);
+    padding: 10px;
+    font-size: 28px;
+    transition: 300ms;
+    font-weight: 700;
+}
+.wrong_input {
+    width: 50px;
+}
+.seperator {
+    display: flex;
+    justify-content: space-around;
+    align-items: center
+    ;
+}
+hr {
+    background-color: var(--Off-white);
+    width: 500px;
+}
+
+.arrow {
+    background-color: var(--Purple);
+    width: 70px;
+    height: 60px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    transition: 300ms;
+}
+
+.content h1 {
+    font-size: 80px;
+    font-weight: 800;
+    font-style: italic;
+}
+.content h1 span{
+    font-size: 80px;
+    color: var(--Purple);
+    font-weight: 800;
+    font-style: italic;
+}
+
+/* hovering */
+
+.arrow:hover{
+    background-color: var(--Off-black);
+}
+
+.input_row div input:hover {
+    border-color:  var(--Purple);
+}
+.input_row div input:focus {
+    border: 1px solid var(--Purple);
+}
+
+.wrong_input {
+    margin-top: 10px;
+    /* color: var(--Light-red);  */
+    width: 100px;
+    font-size: 10px;
+    transition: 300ms;
+}
+
+.red_color{
+    color: var(--Light-red);
+    border-color: var(--Light-red);
+}
