@@ -7,7 +7,7 @@ body {
 }
 
 html {
-	scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 .add_new {
@@ -53,8 +53,7 @@ html {
 .filters {
     display: flex;
     justify-content: center;
-    align-items: center
-    ;
+    align-items: center;
 }
 
 .wrapper {
@@ -81,6 +80,7 @@ html {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 .card .name {
@@ -92,6 +92,35 @@ html {
     font-size: 24px;
 }
 
+.card .edit {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: none;
+}
+
+.card:hover .edit {
+    display: block;
+}
+
+.edit .delete, .edit .modify {
+    background-color: #444;
+    color: #dcdcdc;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 2px 0;
+}
+
+.edit .delete:hover {
+    background-color: #ff4500; /* OrangeRed */
+}
+
+.edit .modify:hover {
+    background-color: #32cd32; /* LimeGreen */
+}
+
 .count, .completed-true .chapters_read {
     color: #32cd32; /* LimeGreen */
 }
@@ -100,13 +129,11 @@ html {
     color: #ff4500; /* OrangeRed */
 }
 
-
 .counter {
     position: fixed;
     bottom: 20px;
     left: 20px;
     z-index: 100;
-
 }
 
 /* Scrollbar styling */
@@ -155,4 +182,15 @@ html {
 
 *::-webkit-scrollbar-thumb:hover {
     background-color: #007bff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .card-container {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .input-text, .input-search {
+        width: 150px;
+    }
 }

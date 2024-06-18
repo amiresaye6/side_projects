@@ -1,27 +1,27 @@
 [
     {
         "name": "Solo leveling",
-        "chapters_read": "✅",
+        "chapters_read": "\u2705",
         "completed": true
     },
     {
         "name": "Tales of demons and gods",
-        "chapters_read": "📕",
+        "chapters_read": "\ud83d\udcd5",
         "completed": false
     },
     {
         "name": "The god of high school",
-        "chapters_read": "📕",
+        "chapters_read": "\ud83d\udcd5",
         "completed": false
     },
     {
         "name": "Apotheosis",
-        "chapters_read": "📕",
+        "chapters_read": "\ud83d\udcd5",
         "completed": false
     },
     {
         "name": "Martial peak",
-        "chapters_read": "📕",
+        "chapters_read": "\ud83d\udcd5",
         "completed": false
     },
     {
@@ -31,72 +31,72 @@
     },
     {
         "name": "Take a good look at me now",
-        "chapters_read": "📕",
+        "chapters_read": "\ud83d\udcd5",
         "completed": false
     },
     {
         "name": "One punch man",
-        "chapters_read": "📕",
+        "chapters_read": "\ud83d\udcd5",
         "completed": false
     },
     {
         "name": "Boko no hero academia",
-        "chapters_read": "📕",
+        "chapters_read": "\ud83d\udcd5",
         "completed": false
     },
     {
         "name": "Jujutsu kaissn",
-        "chapters_read": "📕",
+        "chapters_read": "\ud83d\udcd5",
         "completed": false
     },
     {
         "name": "Tokyo revengera",
-        "chapters_read": "📕",
+        "chapters_read": "\ud83d\udcd5",
         "completed": false
     },
     {
         "name": "Medical return",
-        "chapters_read": "✅",
+        "chapters_read": "\u2705",
         "completed": true
     },
     {
         "name": "Fff class trashero",
-        "chapters_read": "📕",
+        "chapters_read": "\ud83d\udcd5",
         "completed": false
     },
     {
         "name": "Aganist the gods",
-        "chapters_read": "✅",
+        "chapters_read": "\u2705",
         "completed": true
     },
     {
         "name": "Battle through the heavens",
-        "chapters_read": "📕",
+        "chapters_read": "\ud83d\udcd5",
         "completed": false
     },
     {
         "name": "Ranker who lives a second time",
-        "chapters_read": "📕",
+        "chapters_read": "\ud83d\udcd5",
         "completed": false
     },
     {
         "name": "Gosu",
-        "chapters_read": "✅",
+        "chapters_read": "\u2705",
         "completed": true
     },
     {
         "name": "Feng shen ji",
-        "chapters_read": "✅",
+        "chapters_read": "\u2705",
         "completed": true
     },
     {
         "name": "Reverse villain",
-        "chapters_read": "✅",
+        "chapters_read": "\u2705",
         "completed": true
     },
     {
         "name": "Cultivator against hero society",
-        "chapters_read": "📕",
+        "chapters_read": "\ud83d\udcd5",
         "completed": false
     },
     {
@@ -106,7 +106,7 @@
     },
     {
         "name": "Dark mortal",
-        "chapters_read": "✅",
+        "chapters_read": "\u2705",
         "completed": true
     },
     {
@@ -116,7 +116,7 @@
     },
     {
         "name": "Sweet home",
-        "chapters_read": "✅",
+        "chapters_read": "\u2705",
         "completed": true
     },
     {
@@ -166,12 +166,12 @@
     },
     {
         "name": "Reaper of the drifting moon",
-        "chapters_read": "📕",
+        "chapters_read": "\ud83d\udcd5",
         "completed": false
     },
     {
         "name": "The great mage return after 4000 years",
-        "chapters_read": "📕",
+        "chapters_read": "\ud83d\udcd5",
         "completed": false
     },
     {
@@ -400,7 +400,7 @@
         "completed": false
     },
     {
-        "name": "Legend of Asura – The Venom Dragon",
+        "name": "Legend of Asura \u2013 The Venom Dragon",
         "chapters_read": 133,
         "completed": false
     },
@@ -418,5 +418,10 @@
         "name": "My Disciples Are All Big Villains",
         "chapters_read": 223,
         "completed": false
+    },
+    {
+        "name": "test_entry",
+        "chapters_read": 1000,
+        "completed": true
     }
 ]

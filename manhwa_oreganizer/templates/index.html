@@ -12,17 +12,20 @@
     </style>
 </head>
 <body>
-    <!-- NOT IMPLEMNTED YET -->
     <div class="add_new">
-        <button class="btn-primary">Add</button>
-        <input type="text" class="input-text" placeholder="Enter new Entry">
+        <div class="conta">
+            <button class="btn-primary" id="new_add">Add</button>
+            <input type="text" id="new_name" class="input-text" placeholder="Enter new Entry">
+            <input type="text" id="new_count" class="input-text" placeholder="Chapters count">
+            <input type="text" id="new_cond" class="input-text" placeholder="Condition (ongoing / complete)">
+        </div>
     </div>
     <input type="text" class="input-search" placeholder="Search..." data-search>
     <div class="filters">
-        <label for="compleated">Compleated</label>
-    <input type="checkbox" name="compleated" id="compleated">
-    <label for="compleated">Ongoing</label>
-    <input type="checkbox" name="ongoing" id="ongoing">
+        <label for="completed">Completed</label>
+        <input type="checkbox" name="completed" id="completed">
+        <label for="ongoing">Ongoing</label>
+        <input type="checkbox" name="ongoing" id="ongoing">
     </div>
     <div class="counter"><span class="count" id="COUNT">0</span> entries found</div>
 
@@ -32,6 +35,10 @@
             <div class="card {{ 'completed-true' if item.completed else 'completed-false' }}" data-user-template>
                 <h3 class="name">{{ item.name }}</h3>
                 <p class="chapters_read">{{ item.chapters_read }}</p>
+                <div class="edit">
+                    <button class="delete">Delete</button>
+                    <button class="modify">Modify</button>
+                </div>
             </div>
             {% endfor %}
         </div>
