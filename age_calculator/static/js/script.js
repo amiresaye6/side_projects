@@ -26,6 +26,10 @@ var maxDaysPerMonth = {
     11: 30, // November
     12: 31 // December
 };
+const today = new Date();
+const day_now = today.getDate();
+const month_now = today.getMonth();
+const year_now = today.getFullYear();
 
 // Function to check if it's a leap year
 function isLeapYear(year) {
@@ -36,14 +40,20 @@ confirm.addEventListener('click', () => {
     let dayVal = parseInt(day.value); // Convert the value to an integer
     let monthVal = parseInt(month.value);
     let yearVal = parseInt(year.value);
-    
+
     if (isNaN(dayVal)) { // Check if the value is not a number
         wrongDay.textContent = 'must be a valid day';
         wrongDay.parentNode.querySelector('label').classList.add('red_color');
         day.classList.add('red_color');
     }
     else {
-        dayO.textContent = day.value;
+        if (day_now - dayVal < 0) {
+            dayO.textContent = 0;
+            monthVal -= 1;
+        }
+        else {
+            dayO.textContent = day_now - dayVal;
+        }
         wrongDay.textContent = '';
         wrongDay.parentNode.querySelector('label').classList.remove('red_color');
         day.classList.remove('red_color');
@@ -56,19 +66,25 @@ confirm.addEventListener('click', () => {
         month.classList.add('red_color');
     }
     else {
-    // Get the maximum number of days for the specified month
-    var maxDays = maxDaysPerMonth[monthVal];
+        // Get the maximum number of days for the specified month
+        var maxDays = maxDaysPerMonth[monthVal];
 
-    // Check if the entered day is greater than the maximum allowed for the month
-    if (dayVal > maxDays) {
-        // Do something if the day is invalid (e.g., display an error message)
-        wrongDay.textContent = `must be less than${maxDaysPerMonth[monthVal]}`;
-    } else {
-        wrongDay.textContent = ``;
+        // Check if the entered day is greater than the maximum allowed for the month
+        if (dayVal > maxDays) {
+            // Do something if the day is invalid (e.g., display an error message)
+            wrongDay.textContent = `must be less than${maxDaysPerMonth[monthVal]}`;
+        } else {
+            wrongDay.textContent = ``;
 
-    }
+        }
 
-        monthO.textContent = month.value;
+        if (month_now - monthVal < 0) {
+            monthO.textContent = 0;
+            yearO -= 1;
+        }
+        else {
+            monthO.textContent = month_now - monthVal;
+        }
         wrongMonth.textContent = '';
         wrongMonth.parentNode.querySelector('label').classList.remove('red_color');
         month.classList.remove('red_color');
@@ -80,7 +96,12 @@ confirm.addEventListener('click', () => {
         year.classList.add('red_color');
     }
     else {
-        yearO.textContent = year.value;
+        if (year_now - yearVal < 0) {
+            dayO.textContent = 0;
+        }
+        else {
+            yearO.textContent = year_now - yearVal;
+        }
         wrongYear.textContent = '';
         wrongYear.parentNode.querySelector('label').classList.remove('red_color');
         year.classList.remove('red_color');
