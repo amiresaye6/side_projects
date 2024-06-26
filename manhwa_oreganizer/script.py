@@ -5,7 +5,7 @@ import os
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/main')
 def index():
     # Read data from data.json
     with open('data.json', 'r') as file:
