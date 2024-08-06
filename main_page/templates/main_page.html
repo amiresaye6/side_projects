@@ -1,11 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/styles/main_page.css">
     <title>Amir Alsayed</title>
+    <style>
+        #amongus {
+            height: 40px;
+            width: 40px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: -99999999;
+        }
+    </style>
 </head>
+
 <body>
     <div class="intro">
         <h1>Hi there, I'm Amir Alsayed</h1>
@@ -21,5 +34,42 @@
             <a href="manager">Check it out</a>
         </div>
     </div>
+    <img src="../static/images/amongus.png" id="amongus" alt="hi">
+    <script>
+        const coords = {
+            x: 0,
+            y: 0
+        };
+        const amongUs = document.getElementById("amongus");
+
+        // Initial position
+        let currentX = 0;
+        let currentY = 0;
+
+        window.addEventListener("mousemove", (e) => {
+            coords.x = e.clientX;
+            coords.y = e.clientY;
+        });
+
+        function animate() {
+            // Calculate the difference between the current position and the target position
+            let diffX = coords.x - currentX;
+            let diffY = coords.y - currentY;
+
+            // Apply easing factor
+            currentX += diffX * 0.1;
+            currentY += diffY * 0.1;
+
+            // Set the element's position
+            amongUs.style.left = (currentX - 12) + "px";
+            amongUs.style.top = (currentY - 12) + "px";
+
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+
+    </script>
 </body>
+
 </html>
